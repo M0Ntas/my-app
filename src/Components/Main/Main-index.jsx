@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Main-style.css";
 
 const Main = () => {
+   const listFormLS = localStorage.getItem('list') ? JSON.parse(localStorage.getItem('list')) : []
+
+  const [value, setValue] = useState('')
+
+
+  const [list, setList] = useState(listFormLS)
+  useEffect(() => {
+    localStorage.setItem('list', JSON.stringify(list))
+  }, [list])
+
+
+  const click = () => {
+    setList([...list, {
+      id: Math.random().toString(36).substr(2, 9),
+      name: value
+    }])
+  }
+  const handleDelete = (li) => {
+    setList(list.filter(item => item.id !== li.id))
+  }
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      click(e)
+    }
+  }
+
   return (
     <div className="container">
       <div className="list">
@@ -13,48 +39,25 @@ const Main = () => {
           </ul>
         </div>
         <div className="poisk">
-          <input id="input" type="text" placeholder="Введите текст" />
-          <button id="button">Добавить +</button>
+          <input id="input"
+                 type="text"
+                 placeholder="Введите текст"
+                 value={value}
+                 onChange={(e) => setValue(e.target.value)}
+                 onKeyDown={handleKeyPress}/>
+          <button onClick={click} id="button">Добавить +</button>
         </div>
       </div>
       <div className="listing">
         <ul id="list">
-          <li className="li">
-            <span>Выбрать хостинг для сайта</span>
-            <button className="del">&times;</button>
-          </li>
-          <li className="li">
-            <span>Записаться к стоматологу</span>
-            <button className="del">&times;</button>
-          </li>
-          <li className="li">
-            <span>Записаться на курсы по Английскому</span>
-            <button className="del">&times;</button>
-          </li>
-          <li className="li">
-            <span>Навести порядок на кухне</span>
-            <button className="del">&times;</button>
-          </li>
-          <li className="li">
-            <span>Подготовить одежду к поездке</span>
-            <button className="del">&times;</button>
-          </li>
-          <li className="li">
-            <span>Подготовиться к выступлению в понедельник</span>
-            <button className="del">&times;</button>
-          </li>
-          <li className="li">
-            <span>Помыть машину</span>
-            <button className="del">&times;</button>
-          </li>
-          <li className="li">
-            <span>Купить продукты</span>
-            <button className="del">&times;</button>
-          </li>
-          <li className="li">
-            <span>Отдать проект на проверку</span>
-            <button className="del">&times;</button>
-          </li>
+          {list.map(el => {
+            return (
+              <li className="li" key={el.id}>
+                <span>{el.name}</span>
+                <button onClick={() => handleDelete(el)} className="del">&times;</button>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </div>
