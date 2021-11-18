@@ -12,22 +12,29 @@ const Main = () => {
     localStorage.setItem('list', JSON.stringify(list))
   }, [list])
 
-
   const click = () => {
     setList([...list, {
       id: Math.random().toString(36).substr(2, 9),
-      name: value
+      name: value,
+      complete: false
     }])
   }
   const handleDelete = (li) => {
     setList(list.filter(item => item.id !== li.id))
   }
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       click(e)
     }
   }
 
+const handleToggle = (id) => {
+  setList([
+    ...list.map(el =>
+    el.id === id ? {...el, complete: !el.complete} : el)
+  ])
+}
   return (
     <div className="container">
       <div className="list">
@@ -52,8 +59,8 @@ const Main = () => {
         <ul id="list">
           {list.map(el => {
             return (
-              <li className="li" key={el.id}>
-                <span>{el.name}</span>
+              <li className={el.complete ? "li listing-del" : "li"} key={el.id}>
+                <span onClick={() => handleToggle(el.id)}>{el.name}</span>
                 <button onClick={() => handleDelete(el)} className="del">&times;</button>
               </li>
             )

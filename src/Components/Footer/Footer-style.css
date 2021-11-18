@@ -71,5 +71,5 @@ footer{
     text-decoration:line-through;
 }
 .li span{
-    pointer-events: none;
+    /*pointer-events: none;*/
 }

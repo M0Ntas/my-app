@@ -1,44 +1,51 @@
-.list{
+.list {
     display: flex;
     justify-content: space-between;
     margin-top: 56px;
     align-items: center;
 }
-.filtr{
+
+.filtr {
     padding: 0px;
 }
-.filtr ul{
+
+.filtr ul {
     display: flex;
     list-style: none;
     font-family: 'Inter';
-    font-size: 14px;  
+    font-size: 14px;
     margin-left: 0px;
     padding: 0;
 }
-.filtr li{
+
+.filtr li {
     border: 1px solid #F4F5F4;
     box-sizing: border-box;
     border-radius: 8px;
     padding: 16px 32px;
     margin-right: 16px;
 }
-.poisk input{
+
+.poisk input {
     border: 1px solid #F4F5F4;
     box-sizing: border-box;
     border-radius: 8px;
     padding: 16px;
 }
-.poisk button{
+
+.poisk button {
     background: #4448DA;
     border-radius: 8px;
     padding: 16px 32px;
     color: white;
     border-style: unset;
 }
-.listing{
+
+.listing {
     min-height: 400px;
 }
-.listing ul{
+
+.listing ul {
     list-style: none;
     font-family: 'Inter';
     font-style: normal;
@@ -47,12 +54,14 @@
     line-height: 14px;
     margin-top: 32px;
     padding: 0;
-    
+
 }
-.listing ul :last-child{
+
+.listing ul :last-child {
     margin-bottom: 0px;
 }
-.listing li{
+
+.listing li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,4 +70,8 @@
     border-radius: 8px;
     margin-bottom: 16px;
     margin-left: 0px;
+}
+
+.listing-del span {
+    text-decoration: line-through;
 }
