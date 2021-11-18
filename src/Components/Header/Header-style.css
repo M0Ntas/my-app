@@ -1,0 +1,77 @@
+.container{
+    max-width: 1145px;
+    margin: 0 auto;
+    width: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    border-bottom: 1px solid #F4F5F4;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.logo{
+    font-family:'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #4448DA;
+    padding: 0px;
+}
+.logo p{
+    margin: 0px;
+}
+.menu{
+    display: flex;
+    font-family: 'Inter';
+    font-size: 14px;
+    padding: 0px;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+}
+.item{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-right: 40px;
+    cursor: pointer;
+    padding: 0;
+}
+.item:hover{
+    margin-bottom: 34px;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    color: #4448DA;
+    border-bottom: 1px solid #4448DA;
+
+}
+.exit:hover{
+    color: white;
+    background-color: #4448DA;
+    cursor: pointer;
+}
+.mine-right button{
+    color: #4448DA;
+    border: 1px solid #4448DA;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 12px 24px;
+    background: 0;
+    margin-right: 24px;
+}
+.mine-right img{
+    margin-right: 24px;
+}
+.mine-right{
+    display: flex;
+    align-items: center;
+}

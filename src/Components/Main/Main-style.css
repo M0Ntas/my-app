@@ -1,0 +1,64 @@
+.list{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 56px;
+    align-items: center;
+}
+.filtr{
+    padding: 0px;
+}
+.filtr ul{
+    display: flex;
+    list-style: none;
+    font-family: 'Inter';
+    font-size: 14px;  
+    margin-left: 0px;
+    padding: 0;
+}
+.filtr li{
+    border: 1px solid #F4F5F4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 16px 32px;
+    margin-right: 16px;
+}
+.poisk input{
+    border: 1px solid #F4F5F4;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 16px;
+}
+.poisk button{
+    background: #4448DA;
+    border-radius: 8px;
+    padding: 16px 32px;
+    color: white;
+    border-style: unset;
+}
+.listing{
+    min-height: 400px;
+}
+.listing ul{
+    list-style: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    margin-top: 32px;
+    padding: 0;
+    
+}
+.listing ul :last-child{
+    margin-bottom: 0px;
+}
+.listing li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: #F4F5F4;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    margin-left: 0px;
+}
